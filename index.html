@@ -4,14 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/style.css">
 
     <title>meme generator</title>
 </head>
 
 <body onload="onInit()">
-    <h1>Meme Generator</h1>
+    <header class="main-header full-width">
+
+        <div class="flex space-between align-center">
+
+            <div class="logo">Meme Generator</div>
+            <nav class="main-nav">
+                <ul class="main-nav-list clean-list grid">
+
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">About</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <section class="gallery">
+        
 
     </section>
 
@@ -19,15 +35,24 @@
         <div class="canvas-container">
             <canvas id="my-canvas" width="400" height="400"></canvas>
         </div>
-        
-        <button onclick="renderMeme()">load Meme</button>
+        <section class="options-container">
+
+            <label for="meme-text">Enter your text</label>
+            <input type="text" class="meme-text" id="meme-text" placeholder="falafel is great" onchange="setLineTxt()">
+            <button onclick="renderMeme()">load Meme</button>
+        </section>
     </section>
+
+
+    <footer class="main-footer">
+        well hello there, dont you dare steal from here.
+    </footer>
 
 
     <script src="js/main.js"></script>
     <script src="js/service/meme.service.js"></script>
     <script src="js/controllers/meme.controller.js"></script>
-
+    <script src="js/controllers/gallery.controller.js"></script>
 </body>
 
 </html>

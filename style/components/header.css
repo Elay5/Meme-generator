@@ -1,0 +1,32 @@
+.main-header{
+    background-color: #e36e14;
+    height:130px;
+
+}
+.main-header .logo{
+    color: white;
+    font-family: 'ariel';
+    font-size:2.5em;
+
+}
+
+ /* NAV */
+ a{
+    font-size: 1.5em;
+    font-family: 'ariel';
+    padding: 0.5em;
+    color:white;
+    text-decoration: none;
+}
+
+
+
+ul.grid{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+

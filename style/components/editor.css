@@ -1,0 +1,6 @@
+section.editor{
+    display:grid;
+    opacity: 0;
+    transition: 0.6s;
+    z-index: -1;
+}

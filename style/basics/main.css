@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #eee2e2;
+    text-align: center;
+}
+
+
+/* .canvas-container{
+    display:;
+    justify-content: center;
+} */
+
+canvas{
+    background-color: rgb(208, 194, 194);
+    border: 1px grey solid;
+}

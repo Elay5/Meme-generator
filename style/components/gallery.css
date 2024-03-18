@@ -1,0 +1,12 @@
+.gallery{
+    display:grid;
+    grid-auto-flow:column;
+    /* grid-auto-columns: repeat(5,3.5em); */
+    transition:0.6s; 
+    z-index: 0;
+
+}
+
+img{
+    width: 50%;
+}

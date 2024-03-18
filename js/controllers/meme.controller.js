@@ -2,15 +2,16 @@
 function onInit() {
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
-    console.log(gMeme.lines[0].txt)
+    renderGallery()
+    
 
 }
 
-function renderMeme() {
+function renderMeme(imgUrl) {
     const meme= getMeme()
 
     const elImg = new Image()
-    elImg.src = 'img/meme-imgs (square)/1.jpg'
+    elImg.src = imgUrl
 
     // Draw the image on the canvas only when it's ready
 
@@ -22,6 +23,16 @@ function renderMeme() {
         
         
     }
+
+    const elEditor= document.querySelector('section.editor')
+    const elGallery= document.querySelector('section.gallery')
+    
+    elEditor.style.opacity="1"
+    elGallery.style.opacity="0"
+    elGallery.style.zIndex="-1"
+    elEditor.style.zIndex ="0"
+
+
     
     // var canvas = document.getElementById('idCanvas');
     // var dataURL = canvas.toDataURL();
