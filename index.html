@@ -18,7 +18,7 @@
             <nav class="main-nav">
                 <ul class="main-nav-list clean-list grid">
 
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#" onclick="showGallery()">Gallery</a></li>
                     <li><a href="#">About</a></li>
 
                 </ul>
@@ -27,7 +27,7 @@
     </header>
 
     <section class="gallery">
-        
+
 
     </section>
 
@@ -37,9 +37,44 @@
         </div>
         <section class="options-container">
 
+            </div>
             <label for="meme-text">Enter your text</label>
-            <input type="text" class="meme-text" id="meme-text" placeholder="falafel is great" onchange="setLineTxt()">
-            <button onclick="renderMeme()">load Meme</button>
+            <input type="text" class="meme-text" id="meme-text" placeholder="falafel is great" oninput="setLineTxt()">
+
+            <label for="text-color">Choose text color</label>
+            <input type="color" id="text-color" oninput="onChangeTextColor(this)" value="#0000FF">
+            <div>
+                <a href="#" class="download-btn" onclick="downloadMeme(this)" download="my-img.jpg">Download Meme</a>
+
+                <button class="font-inc-btn option-buttons" onclick="onIncreaseFont()">
+                    <img src="design-icons/ICONS/increase font - icon.png" alt="">
+                </button>
+                <button class="font-dec-btn option-buttons" onclick="onDecreaseFont()">
+                    <img src="design-icons/ICONS/decrease font - icon.png" alt="">
+                </button>
+                <button class="add-line-btn option-buttons" onclick="openAddLineModal()">
+                    <img src="design-icons/ICONS/add.png" alt="">
+                </button>
+                <button class="switch-line-btn option-buttons" onclick="onSwitchLine()">switch line</button>
+
+                <dialog class="add-line">
+                    <form onsubmit="onAddLine()" method="dialog">
+                        <h2>Add line</h2>
+        
+                        <label for="text">Text:</label>
+                        <input type="text" id="text" required>
+        
+                        <label for="font-size">Font size:</label>
+                        <input type="number" id="font-size" value="16">
+        
+                        <label for="color">Color:</label>
+                        <input type="color" id="color" value="#0000FF">
+        
+                        <button type="submit">Add line</button>
+                        <button onclick="closeAddLineModal()" class="close-btn">Close</button>
+                    </form>
+                </dialog>
+
         </section>
     </section>
 
@@ -51,8 +86,11 @@
 
     <script src="js/main.js"></script>
     <script src="js/service/meme.service.js"></script>
+    <script src="js/service/downloader.service.js"></script>
+
     <script src="js/controllers/meme.controller.js"></script>
     <script src="js/controllers/gallery.controller.js"></script>
+
 </body>
 
 </html>

@@ -4,3 +4,23 @@ section.editor{
     transition: 0.6s;
     z-index: -1;
 }
+
+.option-buttons{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius:35% ;
+}
+/* .font-dec-btn{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius:35% ;
+} */
+
+.download-btn{
+    font-size: 1em;
+    font-family: 'ariel';
+    padding: 0.2em;
+    color:rgb(23, 19, 96);
+    text-decoration: none;
+
+}

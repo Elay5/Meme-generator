@@ -13,9 +13,18 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
+            
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'white'
+            color: 'blue',
+            isDrag: false,
+        },
+        {
+            
+            txt: 'but sometimes, Shawarma is my go to',
+            size: 20,
+            color: 'blue',
+            isDrag: false,
         }
     ]
 }
@@ -23,10 +32,19 @@ var gMeme = {
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 
+function addLine(txt, size, color) {
+    const newLine = {
+        txt,
+        size,
+        color,
+        isDrag: false,
+    }
+    gMeme.lines.push(newLine)
+}
 
-function setImg(imgId){
-    const selectedImg= gImgs.find(img=> img.id===imgId)
-    
+function setImg(imgId) {
+    const selectedImg = gImgs.find(img => img.id === imgId)
+
     return selectedImg.url
 
 }

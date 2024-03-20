@@ -18,3 +18,19 @@ canvas{
     background-color: rgb(208, 194, 194);
     border: 1px grey solid;
 }
+
+.modal {
+	width: 400px;
+	padding: 10px;
+    padding: 2em;
+    border: 1px solid lightgray;
+    /* opacity: 0; */
+    transition: opacity 0.5s;
+
+}
+
+/* @starting-style {
+    .modal {
+        opacity: 0;
+    }
+} */
