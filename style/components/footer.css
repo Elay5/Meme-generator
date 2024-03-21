@@ -1,5 +1,27 @@
-.main-footer{
-    font-family:serif;
+.main-footer {
+    background-color: #e36e14;
+    color:white;
+    font-family: ariel;
+    height: 250px;
+    width: 100%;
     text-align: center;
-    margin-top: 45vh;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+   
+}
+
+
+footer .logo {
+    font-size: 40px;
+
+ margin-bottom: 20px;
+
+}
+
+small{
+    text-align: center;
+    margin-left:60px;
 }

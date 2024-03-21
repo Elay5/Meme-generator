@@ -10,22 +10,40 @@
 
 }
 
+
  /* NAV */
+
  a{
     font-size: 1.5em;
     font-family: 'ariel';
     padding: 0.5em;
     color:white;
     text-decoration: none;
+    
+}
+
+.logo{
+    padding-inline-start: 2em;
+    padding-top: 0.5em;
 }
 
 
 
 ul.grid{
+    margin-inline-end: 3em;
+    margin-top:50px;
     display: grid;
     grid-auto-flow: column;
     align-items: center;
     justify-content: space-between;
+}
+
+
+ul>*:not(:last-child){
+    border-right:1px solid white;
+    
+    
+    
 }
 
 

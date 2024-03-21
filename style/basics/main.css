@@ -4,33 +4,37 @@
 
 
 body{
-    background-color: #eee2e2;
-    text-align: center;
+    /* display:grid; */
+    background-color: #e1d7d7;
+    
 }
 
 
-/* .canvas-container{
-    display:;
-    justify-content: center;
-} */
 
 canvas{
     background-color: rgb(208, 194, 194);
     border: 1px grey solid;
 }
 
-.modal {
-	width: 400px;
+.add-line {
+	width: 27%;
+    font:ariel;
+    font-size: 1.3em;
 	padding: 10px;
     padding: 2em;
     border: 1px solid lightgray;
     /* opacity: 0; */
-    transition: opacity 0.5s;
+    transition:opacity 0.5s;
 
 }
 
-/* @starting-style {
-    .modal {
-        opacity: 0;
-    }
-} */
+.add-line>*{
+    padding:1.5px;
+    margin:1px;
+}
+
+img{
+    width: 50%;
+}
+
+

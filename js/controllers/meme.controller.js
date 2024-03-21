@@ -3,6 +3,8 @@ function onInit() {
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
     renderGallery()
+    // addListeners()
+    // resizeCanvas()
 
 
 }
@@ -21,7 +23,6 @@ function renderMeme() {
         meme.lines.map(line => {
             gCtx.fillStyle = line.color
             gCtx.font = `bold ${line.size}px ariel`
-            // gCtx.fillText(line.txt, 50, 65)
         })
 
         // gCtx.fillStyle = meme.lines[0].color
@@ -75,12 +76,12 @@ function onAddLine() {
     addLine(elText, elSize, elColor)
     renderMeme()
 
-
-    // const elModal= document.querySelector('.close-btn')
-    // elModal.close()
 }
 
-
+function closeAddLineModal(){
+    const elModal = document.querySelector('.add-line')
+    elModal.close()
+}
 function openAddLineModal() {
     const elModal = document.querySelector('.add-line')
     elModal.showModal()

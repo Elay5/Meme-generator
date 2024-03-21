@@ -14,7 +14,7 @@
 
         <div class="flex space-between align-center">
 
-            <div class="logo">Meme Generator</div>
+            <div class="logo">MemeCreator</div>
             <nav class="main-nav">
                 <ul class="main-nav-list clean-list grid">
 
@@ -26,61 +26,64 @@
         </div>
     </header>
 
-    <section class="gallery">
-
-
-    </section>
 
     <section class="editor">
+        
         <div class="canvas-container">
             <canvas id="my-canvas" width="400" height="400"></canvas>
         </div>
-        <section class="options-container">
+        <section class="control-box">
 
-            </div>
-            <label for="meme-text">Enter your text</label>
+            <label for="meme-text"></label>
             <input type="text" class="meme-text" id="meme-text" placeholder="falafel is great" oninput="setLineTxt()">
 
-            <label for="text-color">Choose text color</label>
-            <input type="color" id="text-color" oninput="onChangeTextColor(this)" value="#0000FF">
-            <div>
-                <a href="#" class="download-btn" onclick="downloadMeme(this)" download="my-img.jpg">Download Meme</a>
+            <label for="text-color"></label>
+            <input type="color" class="text-color" id="text-color" oninput="onChangeTextColor(this)" value="#0000FF">
 
-                <button class="font-inc-btn option-buttons" onclick="onIncreaseFont()">
-                    <img src="design-icons/ICONS/increase font - icon.png" alt="">
-                </button>
-                <button class="font-dec-btn option-buttons" onclick="onDecreaseFont()">
-                    <img src="design-icons/ICONS/decrease font - icon.png" alt="">
-                </button>
-                <button class="add-line-btn option-buttons" onclick="openAddLineModal()">
-                    <img src="design-icons/ICONS/add.png" alt="">
-                </button>
-                <button class="switch-line-btn option-buttons" onclick="onSwitchLine()">switch line</button>
+            <a href="#" class="download-btn option-buttons" onclick="downloadMeme(this)" download="my-meme.jpg"><img src="design-icons/ICONS/download-icon2.png" alt="download"></a>
 
-                <dialog class="add-line">
-                    <form onsubmit="onAddLine()" method="dialog">
-                        <h2>Add line</h2>
-        
-                        <label for="text">Text:</label>
-                        <input type="text" id="text" required>
-        
-                        <label for="font-size">Font size:</label>
-                        <input type="number" id="font-size" value="16">
-        
-                        <label for="color">Color:</label>
-                        <input type="color" id="color" value="#0000FF">
-        
-                        <button type="submit">Add line</button>
-                        <button onclick="closeAddLineModal()" class="close-btn">Close</button>
-                    </form>
-                </dialog>
+            <button class="font-inc-btn option-buttons" onclick="onIncreaseFont()">
+                <img src="design-icons/ICONS/increase font - icon.png" alt="increase font">
+            </button>
+            <button class="font-dec-btn option-buttons" onclick="onDecreaseFont()">
+                <img src="design-icons/ICONS/decrease font - icon.png" alt="decrease font">
+            </button>
+            <button class="add-line-btn option-buttons" onclick="openAddLineModal()">
+                <img src="design-icons/ICONS/add.png" alt="add line">
+            </button>
+            <button class="switch-line-btn option-buttons" onclick="switchLine()"><img src="design-icons/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="switch lines"></button>
+
+            <dialog class="add-line">
+                <form onsubmit="onAddLine()" method="dialog">
+                    <h2>Add line</h2>
+
+                    <label for="text">Text:</label>
+                    <input type="text" id="text">
+
+                    <label for="font-size">Font size:</label>
+                    <input type="number" id="font-size" value="16">
+
+                    <label for="color">Color:</label>
+                    <input type="color" id="color" value="#0000FF">
+
+                    <button type="submit">Add line</button>
+                    <button onclick="closeAddLineModal()" class="close-btn">Close</button>
+                </form>
+            </dialog>
+
 
         </section>
     </section>
 
+    <section class="gallery"></section>
+  
+
 
     <footer class="main-footer">
-        well hello there, dont you dare steal from here.
+        <div class="logo">MemeCreator</div>
+        <small class="footer-rights">
+            @CoffeeRights reserved to memeCreator
+        </small>
     </footer>
 
 

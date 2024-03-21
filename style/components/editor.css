@@ -1,26 +1,45 @@
-section.editor{
-    display:grid;
+.editor {
+    max-width: 80%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(5em, 40vw) 1em minmax(5em, 40vw);
+    column-gap: 1em;
+    grid-auto-rows: minmax(2em, 1fr);
+    row-gap: 1em;
+    grid-template-areas:
+        "canvas-container . control-box"
+        "canvas-container . control-box"
+        "canvas-container . control-box";
+    
     opacity: 0;
     transition: 0.6s;
-    z-index: -1;
+    /* z-index: -1; */
+
 }
 
-.option-buttons{
-    width: 2.5em;
-    height: 2.5em;
-    border-radius:35% ;
+.canvas-container {
+    margin: 0 auto;
+    grid-area: canvas-container;
 }
-/* .font-dec-btn{
-    width: 2.5em;
-    height: 2.5em;
-    border-radius:35% ;
-} */
 
-.download-btn{
-    font-size: 1em;
-    font-family: 'ariel';
-    padding: 0.2em;
-    color:rgb(23, 19, 96);
-    text-decoration: none;
 
+.control-box {
+
+
+    grid-area: control-box;
+    display: grid;
+    grid-template-columns: repeat(6, 5em);
+    grid-template-rows: 1fr 1fr 0.33em 1fr 1fr 0.66em 1fr 1fr 1fr;
+
+    justify-items: center;
+    align-items: center;
+
+
+
+}
+
+.control-box>* {
+    background-color: rgb(255, 255, 255);
+    border: 0px;
 }
