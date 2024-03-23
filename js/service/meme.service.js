@@ -20,18 +20,23 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-
+            idx: 1,
             txt: 'I sometimes eat Falafel',
-            size: 20,
-            color: 'blue',
-            
+            size: 16,
+            color: 'white',
+            isSelected: true,
+
+
         },
         {
-
+            idx: 2,
             txt: 'but sometimes, Shawarma is my go to',
-            size: 20,
-            color: 'blue',
-            
+            size: 16,
+            color: 'white',
+            isSelected: false,
+
+
+
         }
     ],
     isDrag: false,
@@ -42,10 +47,13 @@ var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 function addLine(txt, size, color) {
     const newLine = {
+        idx: gMeme.lines.length + 1,
         txt,
         size,
         color,
-        
+        isSelected: false,
+
+
     }
     gMeme.lines.push(newLine)
 }
@@ -56,26 +64,34 @@ function setImg(imgId) {
     return selectedImg.url
 
 }
-function drawFrame(){
-    
+function drawFrame() {
+
 
 }
 
 function switchLine() {
-    const { lines} = gMeme
-    gMeme.selectedLineIdx++
-    
-    if (gMeme.selectedLineIdx >= lines.length) gMeme.selectedLineIdx = 0
+    const { lines } = gMeme
+    if (gMeme.selectedLineIdx >= lines.length) {
+        gMeme.selectedLineIdx = 0
+        lines[0].isSelected = true
+    }
+    else {
+        lines[0].isSelected = false
+        lines[gMeme.selectedLineIdx].isSelected = true
+        gMeme.selectedLineIdx++
+
+    }
+    renderMeme()
+
 }
 
 function setLineTxt() {
-
     const { selectedLineIdx } = gMeme
     const { lines } = gMeme
+
     const elMemeTxt = document.querySelector('input.meme-text').value
     lines[selectedLineIdx].txt = elMemeTxt
     renderMeme()
-
 
 }
 
@@ -84,20 +100,11 @@ function getMeme() {
     return gMeme
 }
 
-// function addListeners() {
+function resizeCanvas() {
+    const elContainer = document.querySelector('.canvas-container')
 
-
-//     window.addEventListener('resize', () => {
-//         resizeCanvas()
-
-//         renderMeme()
-//     })
-// }
-// function resizeCanvas() {
-//     console.log('hi')
-//     const elContainer = document.querySelector('.canvas-container')
-
-//     gElCanvas.width = elContainer.offsetWidth
-//     gElCanvas.height = elContainer.offsetHeight
-// }
+    // Changing the canvas dimension clears the canvas
+    gElCanvas.width = elContainer.clientWidth
+    renderMeme()
+}
 

@@ -19,8 +19,11 @@
 }
 
 .canvas-container {
+    width:20vw;
     margin: 0 auto;
+    margin-top:1em;
     grid-area: canvas-container;
+   
 }
 
 

@@ -37,4 +37,9 @@ img{
     width: 50%;
 }
 
+img:hover{
+    cursor: pointer;
+
+}
+
 

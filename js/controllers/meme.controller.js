@@ -2,15 +2,20 @@
 function onInit() {
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
-    renderGallery()
-    // addListeners()
-    // resizeCanvas()
 
+    window.addEventListener('resize', () => resizeCanvas())
+    renderGallery()
 
 }
 
 function renderMeme() {
+    const elContainer = document.querySelector('.canvas-container')
     const meme = getMeme()
+    const { selectedLineIdx } = meme
+
+    var lineStartX = 30
+    var lineStartY = 70
+
 
     const elImg = new Image()
     elImg.src = gSelectedImgUrl
@@ -20,21 +25,16 @@ function renderMeme() {
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 
-        meme.lines.map(line => {
+        meme.lines.map((line) => {
+
             gCtx.fillStyle = line.color
             gCtx.font = `bold ${line.size}px ariel`
+            // if (line.isSelected) drawFrame(lineStartX, lineStartY, line.idx)
+            // if(!line.isSelected)
         })
 
-        // gCtx.fillStyle = meme.lines[0].color
-        // gCtx.font = `bold ${meme.lines[0].size}px ariel`
-        gCtx.fillText(meme.lines[0].txt, 50, 65)
+        drawText(lineStartX, lineStartY)
 
-        if (meme.lines.length > 1) gCtx.fillText(meme.lines[1].txt, 50, 300)
-        // gCtx.fillStyle = meme.lines[1].color
-        // gCtx.font = `bold ${meme.lines[1].size}px ariel`
-        
-        if (meme.lines.length > 2) gCtx.fillText(meme.lines[2].txt, 50, 350)
-        
     }
 
     const elEditor = document.querySelector('section.editor')
@@ -78,7 +78,7 @@ function onAddLine() {
 
 }
 
-function closeAddLineModal(){
+function closeAddLineModal() {
     const elModal = document.querySelector('.add-line')
     elModal.close()
 }
@@ -87,6 +87,39 @@ function openAddLineModal() {
     elModal.showModal()
 
 }
+
+function onSwitchLine() {
+    switchLine()
+
+}
+
+// function drawFrame(dx, dy, idx) {
+
+//     gCtx.strokeStyle = "black";
+//     gCtx.lineWidth = 3;
+//     gCtx.moveTo(dx - 5, (dy * idx) - 25);
+//     gCtx.lineTo(dx - 5, (dy * idx) + 10);
+//     gCtx.lineTo(dx + 300, (dy * idx) + 10);
+//     gCtx.lineTo(dx + 300, (dy * idx) - 25);
+//     gCtx.lineTo(dx - 5, (dy * idx) - 25);
+//     gCtx.stroke();
+
+// }
+
+function showEv(ev) {
+    console.log(ev)
+}
+
+
+function drawText(x, y) {
+    const meme = getMeme()
+    const elContainer = document.querySelector('.canvas-container')
+    gCtx.fillText(meme.lines[0].txt, x, y, elContainer.clientWidth - elContainer.clientWidth / 6)
+    if (meme.lines.length > 1) gCtx.fillText(meme.lines[1].txt, x, y * 2, elContainer.clientWidth - elContainer.clientWidth / 6)
+    if (meme.lines.length > 2) gCtx.fillText(meme.lines[2].txt, x, y * 3, elContainer.clientWidth - elContainer.clientWidth / 6)
+}
+
+
 
 
 

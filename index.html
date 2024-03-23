@@ -28,9 +28,9 @@
 
 
     <section class="editor">
-        
+
         <div class="canvas-container">
-            <canvas id="my-canvas" width="400" height="400"></canvas>
+            <canvas id="my-canvas" width="400" height="400" onclick="showEv(event)"></canvas>
         </div>
         <section class="control-box">
 
@@ -40,7 +40,8 @@
             <label for="text-color"></label>
             <input type="color" class="text-color" id="text-color" oninput="onChangeTextColor(this)" value="#0000FF">
 
-            <a href="#" class="download-btn option-buttons" onclick="downloadMeme(this)" download="my-meme.jpg"><img src="design-icons/ICONS/download-icon2.png" alt="download"></a>
+            <a href="#" class="download-btn option-buttons" onclick="downloadMeme(this)" download="my-meme.jpg"><img
+                    src="design-icons/ICONS/download-icon2.png" alt="download"></a>
 
             <button class="font-inc-btn option-buttons" onclick="onIncreaseFont()">
                 <img src="design-icons/ICONS/increase font - icon.png" alt="increase font">
@@ -51,7 +52,9 @@
             <button class="add-line-btn option-buttons" onclick="openAddLineModal()">
                 <img src="design-icons/ICONS/add.png" alt="add line">
             </button>
-            <button class="switch-line-btn option-buttons" onclick="switchLine()"><img src="design-icons/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="switch lines"></button>
+            <button class="switch-line-btn option-buttons" onclick="onSwitchLine()"><img
+                    src="design-icons/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                    alt="switch lines"></button>
 
             <dialog class="add-line">
                 <form onsubmit="onAddLine()" method="dialog">
@@ -76,7 +79,7 @@
     </section>
 
     <section class="gallery"></section>
-  
+
 
 
     <footer class="main-footer">
